@@ -1,0 +1,65 @@
+﻿<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Date Your Plate</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="app-header">
+        <img src="logo.jpeg" alt="Date Your Plate logo" class="site-logo" />
+        <div>
+          <h1>Date Your Plate</h1>
+          <p> A healthy relationship with your food, is a long term commitment. Swipe right on food, swipe left on waste.</p>
+        </div>
+      </header>
+
+      <nav class="tabs">
+        <button id="tab-inventory" class="tab-btn active">Voorraad</button>
+        <button id="tab-recipes" class="tab-btn">Recepten</button>
+      </nav>
+
+      <main class="main">
+        <section id="inventory-view" class="view">
+          <div class="card-stack" id="inventory-stack" aria-live="polite"></div>
+          <div class="controls">
+            <button id="refresh-stock" class="btn">Laad voorbeeldvoorraad</button>
+            <button id="clear-storage" class="btn">Reset</button>
+            <button id="open-register" class="btn primary">Product toevoegen</button>
+          </div>
+
+          <!-- Inline register panel -->
+          <form id="register-panel" class="card hidden" style="position:static;transform:none;margin-top:14px;">
+            <h3>Nieuw product</h3>
+            <label>Naam<br /><input id="reg-name" type="text" required placeholder="Bijv. Aardbeien" /></label>
+            <div style="height:8px"></div>
+            <label>Aantal<br /><input id="reg-qty" type="number" min="1" value="1" required /></label>
+            <div style="height:8px"></div>
+            <label>Vervaldatum<br /><input id="reg-expires" type="date" required /></label>
+            <div class="controls" style="margin-top:12px">
+              <button type="submit" class="btn primary">Opslaan</button>
+              <button type="button" id="reg-cancel" class="btn">Annuleer</button>
+              <span id="reg-msg" class="muted" style="margin-left:12px"></span>
+            </div>
+          </form>
+        </section>
+
+        <section id="recipes-view" class="view hidden">
+          <div class="recipe-controls">
+            <button id="generate-recipes" class="btn primary">Genereer recepten</button>
+            <div id="recipe-count" class="muted">—</div>
+          </div>
+          <div class="card-stack" id="recipe-stack" aria-live="polite"></div>
+        </section>
+      </main>
+
+      <footer class="app-footer">
+        <small>Swipe left = Opgegeten / Weggegooid. Swipe right = Nog aanwezig / Kies recept.</small>
+      </footer>
+    </div>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
