@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Registreer Product - Date Your Plate</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="app" style="max-width:720px;margin:28px auto;">
+      <header class="app-header">
+        <h1>Registreer een product</h1>
+        <p>Voeg snel een item toe aan je digitale voorraad.</p>
+      </header>
+
+      <main>
+        <form id="register-form" class="card" style="position:static;transform:none;">
+          <label>
+            Naam<br />
+            <input id="name" name="name" type="text" required placeholder="Bijv. Aardbeien" />
+          </label>
+          <div style="height:8px"></div>
+          <label>
+            Aantal<br />
+            <input id="qty" name="qty" type="number" min="1" value="1" required />
+          </label>
+          <div style="height:8px"></div>
+          <label>
+            Vervaldatum<br />
+            <input id="expires" name="expires" type="date" required />
+          </label>
+
+          <div class="controls" style="margin-top:14px">
+            <button type="submit" class="btn primary">Opslaan</button>
+            <button type="button" id="back" class="btn">Terug</button>
+            <span id="msg" class="muted" style="margin-left:12px"></span>
+          </div>
+        </form>
+      </main>
+
+      <footer class="app-footer" style="margin-top:18px">
+        <small>Je voorraad wordt opgeslagen in je browser (localStorage).</small>
+      </footer>
+    </div>
+
+    <script src="js/register.js"></script>
+  </body>
+</html>
